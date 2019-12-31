@@ -20,7 +20,7 @@ namespace SistemaOrcamento.Contoller
             try
             {
                 con.AbrirConexao();
-                sql = new MySqlCommand("SELECT * FROM fornecedores order by id desc", con.con);
+                sql = new MySqlCommand("SELECT * FROM fornecedores order by id_fornecedor desc", con.con);
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = sql;
                 DataTable dt = new DataTable();
@@ -29,7 +29,8 @@ namespace SistemaOrcamento.Contoller
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao Listar " + ex.Message);
+                throw ex;
+                //MessageBox.Show("Erro ao Listar " + ex.Message);
                 con.FecharConexao();
             }
         }
@@ -59,9 +60,9 @@ namespace SistemaOrcamento.Contoller
             try
             {
                 con.AbrirConexao();
-                sql = new MySqlCommand("SELECT * FROM fornecedores WHERE nome = @nome or cnpj = @cnpj", con.con);
-                sql.Parameters.AddWithValue("@cnpj", fornecedores.Cnpj);
-                sql.Parameters.AddWithValue("@nome", fornecedores.Nome);
+                sql = new MySqlCommand("SELECT * FROM fornecedores WHERE nome like @nome or cnpj like @cnpj", con.con);
+                sql.Parameters.AddWithValue("@cnpj", fornecedores.Cnpj + "%");
+                sql.Parameters.AddWithValue("@nome", fornecedores.Nome + "%");
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = sql;
                 DataTable dt = new DataTable();
@@ -70,7 +71,8 @@ namespace SistemaOrcamento.Contoller
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao Buscar " + ex.Message);
+                throw ex;
+                //MessageBox.Show("Erro ao Buscar " + ex.Message);
                 con.FecharConexao();
             }
         }
@@ -79,7 +81,7 @@ namespace SistemaOrcamento.Contoller
             try
             {
                 con.AbrirConexao();
-                sql = new MySqlCommand("DELETE * FROM fornecedores WHERE id_fornecedor = @id", con.con);
+                sql = new MySqlCommand("DELETE FROM fornecedores WHERE id_fornecedor = @id", con.con);
                 sql.Parameters.AddWithValue("@id", fornecedores.IdForncedor);
                 sql.ExecuteNonQuery();
                 con.FecharConexao();
