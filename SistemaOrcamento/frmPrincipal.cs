@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SistemaOrcamento
 {
-    public partial class frmMain : Form
+    public partial class frmPrincipal : Form
     {
-        public frmMain()
+        public frmPrincipal()
         {
             InitializeComponent();
         }
