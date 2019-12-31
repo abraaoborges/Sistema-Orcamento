@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaOrcamento.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,6 +31,12 @@ namespace SistemaOrcamento
         private void sairToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void fornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFornecedores frm = new frmFornecedores();
+            frm.ShowDialog();
         }
     }
 }

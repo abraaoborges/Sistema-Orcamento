@@ -58,6 +58,7 @@
             // 
             // txtNome
             // 
+            this.txtNome.Enabled = false;
             this.txtNome.Location = new System.Drawing.Point(100, 88);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(189, 22);
@@ -83,6 +84,7 @@
             // 
             // txtEndereco
             // 
+            this.txtEndereco.Enabled = false;
             this.txtEndereco.Location = new System.Drawing.Point(442, 131);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(189, 22);
@@ -99,6 +101,7 @@
             // 
             // txtCNPJ
             // 
+            this.txtCNPJ.Enabled = false;
             this.txtCNPJ.Location = new System.Drawing.Point(442, 88);
             this.txtCNPJ.Mask = "00.000.000/0000-00";
             this.txtCNPJ.Name = "txtCNPJ";
@@ -107,6 +110,7 @@
             // 
             // txtTelefone
             // 
+            this.txtTelefone.Enabled = false;
             this.txtTelefone.Location = new System.Drawing.Point(100, 134);
             this.txtTelefone.Mask = "(00) 00000-0000";
             this.txtTelefone.Name = "txtTelefone";
@@ -137,6 +141,7 @@
             this.btnNovo.TabIndex = 12;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnSalvar
             // 

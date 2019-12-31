@@ -21,5 +21,34 @@ namespace SistemaOrcamento.View
         {
 
         }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            HabilitarCampos();
+        }
+
+        private void HabilitarCampos()
+        {
+            txtNome.Enabled = true;
+            txtCNPJ.Enabled = true;
+            txtEndereco.Enabled = true;
+            txtTelefone.Enabled = true;            
+        }
+        private void DesabilitarCampos()
+        {
+            txtNome.Enabled = false;
+            txtCNPJ.Enabled = false;
+            txtEndereco.Enabled = false;
+            txtTelefone.Enabled = false;
+        }
+
+        private void Limpar()
+        {
+            txtNome.Text = "";
+            txtCNPJ.Text = "";
+            txtEndereco.Text = "";
+            txtTelefone.Text = "";
+            txtBuscar.Text = "";
+        }
     }
 }
