@@ -49,13 +49,14 @@
             this.dg.Name = "dg";
             this.dg.RowHeadersWidth = 51;
             this.dg.RowTemplate.Height = 24;
-            this.dg.Size = new System.Drawing.Size(351, 218);
+            this.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dg.Size = new System.Drawing.Size(351, 284);
             this.dg.TabIndex = 31;
             this.dg.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_CellClick);
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(293, 326);
+            this.btnExcluir.Location = new System.Drawing.Point(293, 365);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(90, 47);
             this.btnExcluir.TabIndex = 30;
@@ -65,7 +66,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(204, 326);
+            this.btnEditar.Location = new System.Drawing.Point(204, 365);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(80, 47);
             this.btnEditar.TabIndex = 29;
@@ -76,7 +77,7 @@
             // btnSalvar
             // 
             this.btnSalvar.Enabled = false;
-            this.btnSalvar.Location = new System.Drawing.Point(118, 326);
+            this.btnSalvar.Location = new System.Drawing.Point(118, 365);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(80, 47);
             this.btnSalvar.TabIndex = 28;
@@ -86,7 +87,7 @@
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(32, 326);
+            this.btnNovo.Location = new System.Drawing.Point(32, 365);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(80, 47);
             this.btnNovo.TabIndex = 27;
@@ -148,7 +149,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 403);
+            this.ClientSize = new System.Drawing.Size(427, 429);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dg);

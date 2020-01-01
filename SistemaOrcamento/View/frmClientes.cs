@@ -21,7 +21,6 @@ namespace SistemaOrcamento.View
             InitializeComponent();
             Listar();
         }
-
         private void Listar()
         {
             try
@@ -125,6 +124,11 @@ namespace SistemaOrcamento.View
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            if (txtNome.Text == "")
+            {
+                MessageBox.Show("Preencha o campo Nome");
+                return;
+            }
             Clientes clientes = new Clientes();
             Salvar(clientes);
             Listar();
@@ -176,7 +180,6 @@ namespace SistemaOrcamento.View
                 return;
             }
         }
-
         private void dg_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtCodigo.Text = dg.CurrentRow.Cells[0].Value.ToString();

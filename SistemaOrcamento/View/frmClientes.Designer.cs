@@ -53,6 +53,7 @@
             this.dg.Name = "dg";
             this.dg.RowHeadersWidth = 51;
             this.dg.RowTemplate.Height = 24;
+            this.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg.Size = new System.Drawing.Size(796, 218);
             this.dg.TabIndex = 31;
             this.dg.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_CellClick);
