@@ -1,17 +1,18 @@
-﻿using SistemaOrcamento.Contoller;
-using SistemaOrcamento.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SistemaOrcamento.Contoller;
+using SistemaOrcamento.Entities;
+using System.Data;
+
 
 namespace SistemaOrcamento.Model
 {
-    public class FornecedorModel
+    class ClienteModel
     {
-        FornecedorController controller = new FornecedorController();
+        ClienteController controller = new ClienteController();
 
         public DataTable Listar()
         {
@@ -27,11 +28,11 @@ namespace SistemaOrcamento.Model
                 throw ex;
             }
         }
-        public void Salvar(Fornecedores fornecedores)
+        public void Salvar(Clientes clientes)
         {
             try
             {
-                controller.Inserir(fornecedores);
+                controller.Inserir(clientes);
             }
             catch (Exception ex)
             {
@@ -39,11 +40,11 @@ namespace SistemaOrcamento.Model
                 throw ex;
             }
         }
-        public void Editar(Fornecedores fornecedores)
+        public void Editar(Clientes clientes)
         {
             try
             {
-                controller.Editar(fornecedores);
+                controller.Editar(clientes);
             }
             catch (Exception ex)
             {
@@ -51,11 +52,11 @@ namespace SistemaOrcamento.Model
                 throw ex;
             }
         }
-        public void Excluir(Fornecedores fornecedores)
+        public void Excluir(Clientes clientes)
         {
             try
             {
-                controller.Excluir(fornecedores);
+                controller.Excluir(clientes);
             }
             catch (Exception ex)
             {
@@ -63,15 +64,14 @@ namespace SistemaOrcamento.Model
                 throw ex;
             }
         }
-        public DataTable Buscar(Fornecedores fornecedores)
+        public DataTable Buscar(Clientes clientes)
         {
             try
             {
-                return controller.Buscar(fornecedores);
+                return controller.Buscar(clientes);
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }

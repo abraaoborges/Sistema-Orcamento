@@ -33,8 +33,8 @@
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fornecedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.unidadesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.orçamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoOrçamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,13 +61,12 @@
             this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.produtosToolStripMenuItem,
             this.fornecedoresToolStripMenuItem,
-            this.unidadesToolStripMenuItem,
-            this.unidadesToolStripMenuItem1});
+            this.clientesToolStripMenuItem,
+            this.unidadesToolStripMenuItem});
             this.cadastrosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cadastrosToolStripMenuItem.Image")));
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
             this.cadastrosToolStripMenuItem.Text = "Cadastros";
-            this.cadastrosToolStripMenuItem.Click += new System.EventHandler(this.cadastrosToolStripMenuItem_Click);
             // 
             // produtosToolStripMenuItem
             // 
@@ -82,18 +81,18 @@
             this.fornecedoresToolStripMenuItem.Text = "Fornecedores";
             this.fornecedoresToolStripMenuItem.Click += new System.EventHandler(this.fornecedoresToolStripMenuItem_Click);
             // 
+            // clientesToolStripMenuItem
+            // 
+            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.clientesToolStripMenuItem.Text = "Clientes";
+            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
+            // 
             // unidadesToolStripMenuItem
             // 
             this.unidadesToolStripMenuItem.Name = "unidadesToolStripMenuItem";
             this.unidadesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.unidadesToolStripMenuItem.Text = "Clientes";
-            this.unidadesToolStripMenuItem.Click += new System.EventHandler(this.unidadesToolStripMenuItem_Click);
-            // 
-            // unidadesToolStripMenuItem1
-            // 
-            this.unidadesToolStripMenuItem1.Name = "unidadesToolStripMenuItem1";
-            this.unidadesToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.unidadesToolStripMenuItem1.Text = "Unidades";
+            this.unidadesToolStripMenuItem.Text = "Unidades";
             // 
             // orçamentosToolStripMenuItem
             // 
@@ -129,7 +128,7 @@
             // sairToolStripMenuItem1
             // 
             this.sairToolStripMenuItem1.Name = "sairToolStripMenuItem1";
-            this.sairToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.sairToolStripMenuItem1.Size = new System.Drawing.Size(117, 26);
             this.sairToolStripMenuItem1.Text = "Sair";
             this.sairToolStripMenuItem1.Click += new System.EventHandler(this.sairToolStripMenuItem1_Click);
             // 
@@ -161,8 +160,8 @@
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem produtosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fornecedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem unidadesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem unidadesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem novoOrçamentoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem imprimirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem1;

@@ -64,7 +64,6 @@ namespace SistemaOrcamento.View
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-
             Fornecedores fornecedores = new Fornecedores();
             Salvar(fornecedores);
             Listar();
@@ -101,7 +100,7 @@ namespace SistemaOrcamento.View
                 fornecedores.Endereco = txtEndereco.Text;
                 fornecedorModel.Salvar(fornecedores);
 
-                MessageBox.Show("Fornecedor salvo com sucesso!");
+                MessageBox.Show("Registro salvo com sucesso!");
             }
             catch (Exception ex)
             {
@@ -180,7 +179,7 @@ namespace SistemaOrcamento.View
                 return;
             }
 
-            if (MessageBox.Show("Deseja Excluir o Orçamento?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
+            if (MessageBox.Show("Deseja Excluir o Fornecedor?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
             {
                 return;
             }

@@ -18,16 +18,6 @@ namespace SistemaOrcamento
             InitializeComponent();
         }
 
-        private void cadastrosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void unidadesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void sairToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -36,6 +26,12 @@ namespace SistemaOrcamento
         private void fornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmFornecedores frm = new frmFornecedores();
+            frm.ShowDialog();
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmClientes frm = new frmClientes();
             frm.ShowDialog();
         }
     }
