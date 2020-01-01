@@ -48,8 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexao.cs" />
-    <Compile Include="Contoller\ClienteController.cs" />
-    <Compile Include="Contoller\FornecedorController.cs" />
+    <Compile Include="Controller\ClienteController.cs" />
+    <Compile Include="Controller\FornecedorController.cs" />
+    <Compile Include="Controller\UnidadeController.cs" />
     <Compile Include="Entities\Clientes.cs" />
     <Compile Include="Entities\Fornecedores.cs" />
     <Compile Include="Entities\Orcamentos.cs" />
@@ -63,6 +64,7 @@
     </Compile>
     <Compile Include="Model\ClienteModel.cs" />
     <Compile Include="Model\FornecedorModel.cs" />
+    <Compile Include="Model\UnidadeModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\frmClientes.cs">

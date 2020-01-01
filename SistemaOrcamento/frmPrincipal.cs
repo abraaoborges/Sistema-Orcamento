@@ -34,5 +34,17 @@ namespace SistemaOrcamento
             frmClientes frm = new frmClientes();
             frm.ShowDialog();
         }
+
+        private void unidadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUnidades frm = new frmUnidades();
+            frm.ShowDialog();
+        }
+
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProdutos frm = new frmProdutos();
+            frm.ShowDialog();
+        }
     }
 }

@@ -10,9 +10,9 @@ using System.Data;
 
 namespace SistemaOrcamento.Model
 {
-    public class ClienteModel
+    public class UnidadeModel
     {
-        ClienteController controller = new ClienteController();
+        UnidadeController controller = new UnidadeController();
 
         public DataTable Listar()
         {
@@ -28,11 +28,11 @@ namespace SistemaOrcamento.Model
                 throw ex;
             }
         }
-        public void Salvar(Clientes clientes)
+        public void Salvar(Unidades unidades)
         {
             try
             {
-                controller.Inserir(clientes);
+                controller.Inserir(unidades);
             }
             catch (Exception ex)
             {
@@ -40,11 +40,11 @@ namespace SistemaOrcamento.Model
                 throw ex;
             }
         }
-        public void Editar(Clientes clientes)
+        public void Editar(Unidades unidades)
         {
             try
             {
-                controller.Editar(clientes);
+                controller.Editar(unidades);
             }
             catch (Exception ex)
             {
@@ -52,11 +52,11 @@ namespace SistemaOrcamento.Model
                 throw ex;
             }
         }
-        public void Excluir(Clientes clientes)
+        public void Excluir(Unidades unidades)
         {
             try
             {
-                controller.Excluir(clientes);
+                controller.Excluir(unidades);
             }
             catch (Exception ex)
             {
@@ -64,16 +64,16 @@ namespace SistemaOrcamento.Model
                 throw ex;
             }
         }
-        public DataTable Buscar(Clientes clientes)
-        {
-            try
-            {
-                return controller.Buscar(clientes);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
+        //public DataTable Buscar(Unidades unidades)
+        //{
+        //    try
+        //    {
+        //        return controller.Buscar(unidades);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
     }
 }

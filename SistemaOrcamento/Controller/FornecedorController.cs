@@ -1,16 +1,16 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using SistemaOrcamento.Entities;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
-using SistemaOrcamento.Entities;
-using System.Data;
 using System.Windows.Forms;
 
-namespace SistemaOrcamento.Contoller
+namespace SistemaOrcamento.Controller
 {
-    public class ClienteController
+    public class FornecedorController
     {
         MySqlCommand sql;
         Conexao con = new Conexao();
@@ -20,7 +20,7 @@ namespace SistemaOrcamento.Contoller
             try
             {
                 con.AbrirConexao();
-                sql = new MySqlCommand("SELECT * FROM clientes order by id_cliente desc", con.con);
+                sql = new MySqlCommand("SELECT * FROM fornecedores order by id_fornecedor desc", con.con);
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = sql;
                 DataTable dt = new DataTable();
@@ -34,16 +34,17 @@ namespace SistemaOrcamento.Contoller
                 con.FecharConexao();
             }
         }
-        public void Editar(Clientes clientes)
+        public void Editar(Fornecedores fornecedores)
         {
             try
             {
                 con.AbrirConexao();
-                sql = new MySqlCommand("UPDATE clientes SET nome = @nome, telefone = @telefone, email = @email WHERE id_cliente = @id", con.con);
-                sql.Parameters.AddWithValue("@nome", clientes.Nome);
-                sql.Parameters.AddWithValue("@telefone", clientes.Telefone);
-                sql.Parameters.AddWithValue("@email", clientes.Email);
-                sql.Parameters.AddWithValue("@id", clientes.IdCliente);
+                sql = new MySqlCommand("UPDATE fornecedores SET cnpj = @cnpj, nome = @nome, telefone = @telefone, endereco = @endereco WHERE id_fornecedor = @id", con.con);
+                sql.Parameters.AddWithValue("@cnpj", fornecedores.Cnpj);
+                sql.Parameters.AddWithValue("@nome", fornecedores.Nome);
+                sql.Parameters.AddWithValue("@telefone", fornecedores.Telefone);
+                sql.Parameters.AddWithValue("@endereco", fornecedores.Endereco);
+                sql.Parameters.AddWithValue("@id", fornecedores.IdForncedor);
                 sql.ExecuteNonQuery();
                 con.FecharConexao();
             }
@@ -53,13 +54,14 @@ namespace SistemaOrcamento.Contoller
                 con.FecharConexao();
             }
         }
-        public DataTable Buscar(Clientes clientes)
+        public DataTable Buscar(Fornecedores fornecedores)
         {
             try
             {
                 con.AbrirConexao();
-                sql = new MySqlCommand("SELECT * FROM clientes WHERE nome like @nome", con.con);
-                sql.Parameters.AddWithValue("@nome", clientes.Nome + "%");
+                sql = new MySqlCommand("SELECT * FROM fornecedores WHERE nome like @nome or cnpj like @cnpj", con.con);
+                sql.Parameters.AddWithValue("@cnpj", fornecedores.Cnpj + "%");
+                sql.Parameters.AddWithValue("@nome", fornecedores.Nome + "%");
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = sql;
                 DataTable dt = new DataTable();
@@ -73,13 +75,13 @@ namespace SistemaOrcamento.Contoller
                 con.FecharConexao();
             }
         }
-        public void Excluir(Clientes clientes)
+        public void Excluir(Fornecedores fornecedores)
         {
             try
             {
                 con.AbrirConexao();
-                sql = new MySqlCommand("DELETE FROM clientes WHERE id_cliente = @id", con.con);
-                sql.Parameters.AddWithValue("@id", clientes.IdCliente);
+                sql = new MySqlCommand("DELETE FROM fornecedores WHERE id_fornecedor = @id", con.con);
+                sql.Parameters.AddWithValue("@id", fornecedores.IdForncedor);
                 sql.ExecuteNonQuery();
                 con.FecharConexao();
             }
@@ -89,15 +91,16 @@ namespace SistemaOrcamento.Contoller
                 con.FecharConexao();
             }
         }
-        public void Inserir(Clientes clientes)
+        public void Inserir(Fornecedores fornecedores)
         {
             try
             {
                 con.AbrirConexao();
-                sql = new MySqlCommand("INSERT INTO clientes (nome, telefone, email) values (@nome, @telefone, @email)", con.con);
-                sql.Parameters.AddWithValue("@nome", clientes.Nome);
-                sql.Parameters.AddWithValue("@telefone", clientes.Telefone);
-                sql.Parameters.AddWithValue("@email", clientes.Email);
+                sql = new MySqlCommand("INSERT INTO fornecedores (cnpj, nome, telefone, endereco) values (@cnpj, @nome, @telefone, @endereco)", con.con);
+                sql.Parameters.AddWithValue("@cnpj", fornecedores.Cnpj);
+                sql.Parameters.AddWithValue("@nome", fornecedores.Nome);
+                sql.Parameters.AddWithValue("@telefone", fornecedores.Telefone);
+                sql.Parameters.AddWithValue("@endereco", fornecedores.Endereco);
                 sql.ExecuteNonQuery();
                 con.FecharConexao();
             }
