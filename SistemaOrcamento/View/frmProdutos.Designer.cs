@@ -60,7 +60,7 @@
             this.dg.RowHeadersWidth = 51;
             this.dg.RowTemplate.Height = 24;
             this.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dg.Size = new System.Drawing.Size(595, 260);
+            this.dg.Size = new System.Drawing.Size(1316, 260);
             this.dg.TabIndex = 41;
             this.dg.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_CellClick);
             // 
@@ -250,7 +250,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 693);
+            this.ClientSize = new System.Drawing.Size(1394, 693);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtCodigo);

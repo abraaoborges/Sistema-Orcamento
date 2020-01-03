@@ -20,7 +20,30 @@ namespace SistemaOrcamento.Controller
             try
             {
                 con.AbrirConexao();
-                sql = new MySqlCommand("SELECT * FROM produtos order by nome asc", con.con);
+                sql = new MySqlCommand("SELECT prod.id_produto, prod.codigo, forn.nome, prod.nome, prod.descricao, unid.unidade, prod.valor " +
+                                        "FROM produtos prod " +
+                                        "INNER JOIN fornecedores forn on (forn.id_fornecedor = prod.id_fornecedor) " +
+                                        "INNER JOIN unidades unid on (unid.id_unidade = prod.id_unidade) " +
+                                        "order by prod.nome asc", con.con);
+                MySqlDataAdapter da = new MySqlDataAdapter();
+                da.SelectCommand = sql;
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+                //MessageBox.Show("Erro ao Listar " + ex.Message);
+                con.FecharConexao();
+            }
+        }
+        public DataTable ListarProdutos()
+        {
+            try
+            {
+                con.AbrirConexao();
+                sql = new MySqlCommand("SELECT * FROM produtos order by nome desc", con.con);
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = sql;
                 DataTable dt = new DataTable();
@@ -64,6 +87,26 @@ namespace SistemaOrcamento.Controller
                 sql = new MySqlCommand("SELECT * FROM produtos WHERE nome like @nome or codigo like @codigo", con.con);
                 sql.Parameters.AddWithValue("@nome", produtos.Nome + "%");
                 sql.Parameters.AddWithValue("@codigo", produtos.Codigo + "%");
+                MySqlDataAdapter da = new MySqlDataAdapter();
+                da.SelectCommand = sql;
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+                //MessageBox.Show("Erro ao Buscar " + ex.Message);
+                con.FecharConexao();
+            }
+        }
+        public DataTable BuscarValor(Produtos produtos)
+        {
+            try
+            {
+                con.AbrirConexao();
+                sql = new MySqlCommand("SELECT valor FROM produtos WHERE id_produto = @id", con.con);
+                sql.Parameters.AddWithValue("@id", produtos.IdProduto);
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = sql;
                 DataTable dt = new DataTable();

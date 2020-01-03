@@ -9,9 +9,9 @@ using System.Data;
 
 namespace SistemaOrcamento.Model
 {
-    public class ProdutoModel
+    public class OrcamentoModel
     {
-        ProdutoController controller = new ProdutoController();
+        OrcamentoController controller = new OrcamentoController();
 
         public DataTable Listar()
         {
@@ -27,12 +27,12 @@ namespace SistemaOrcamento.Model
                 throw ex;
             }
         }
-        public DataTable ListarProdutos()
+        public DataTable ListarOrcamento()
         {
             try
             {
                 DataTable dt = new DataTable();
-                dt = controller.ListarProdutos();
+                dt = controller.ListarOrcamento();
                 return dt;
             }
             catch (Exception ex)
@@ -41,11 +41,11 @@ namespace SistemaOrcamento.Model
                 throw ex;
             }
         }
-        public void Salvar(Produtos produtos)
+        public void Salvar(Orcamentos orcamentos)
         {
             try
             {
-                controller.Inserir(produtos);
+                controller.Inserir(orcamentos);
             }
             catch (Exception ex)
             {
@@ -53,11 +53,11 @@ namespace SistemaOrcamento.Model
                 throw ex;
             }
         }
-        public void Editar(Produtos produtos)
+        public void Editar(Orcamentos orcamentos)
         {
             try
             {
-                controller.Editar(produtos);
+                controller.Editar(orcamentos);
             }
             catch (Exception ex)
             {
@@ -65,11 +65,11 @@ namespace SistemaOrcamento.Model
                 throw ex;
             }
         }
-        public void Excluir(Produtos produtos)
+        public void Excluir(Orcamentos orcamentos)
         {
             try
             {
-                controller.Excluir(produtos);
+                controller.Excluir(orcamentos);
             }
             catch (Exception ex)
             {
@@ -77,22 +77,11 @@ namespace SistemaOrcamento.Model
                 throw ex;
             }
         }
-        public DataTable Buscar(Produtos produtos)
+        public DataTable Buscar(Orcamentos orcamentos)
         {
             try
             {
-                return controller.Buscar(produtos);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        public DataTable BuscarValor(Produtos produtos)
-        {
-            try
-            {
-                return controller.BuscarValor(produtos);
+                return controller.Buscar(orcamentos);
             }
             catch (Exception ex)
             {

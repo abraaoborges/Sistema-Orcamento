@@ -14,6 +14,7 @@ namespace SistemaOrcamento.Entities
         public int IdCliente { get; set; }
         public int Quantidade { get; set; }
         public decimal ValorTotal { get; set; }
+        public DateTime Data { get; set; }
 
     }
 }

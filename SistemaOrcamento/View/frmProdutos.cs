@@ -39,6 +39,16 @@ namespace SistemaOrcamento.View
             try
             {
                 dg.DataSource = ProdutoModel.Listar();
+                dg.Columns[0].Visible = false;
+                dg.Columns[1].HeaderText = "Código";
+                dg.Columns[2].HeaderText = "Fornecedor";
+                dg.Columns[3].HeaderText = "Nome";
+                dg.Columns[4].HeaderText = "Descrição";
+                dg.Columns[5].HeaderText = "Unidade";
+                dg.Columns[6].HeaderText = "Valor";
+
+                dg.Columns[3].Width = 120;
+                dg.Columns[4].Width = 150;
             }
             catch (Exception ex)
             {
@@ -138,7 +148,7 @@ namespace SistemaOrcamento.View
                 produtos.IdFornecedor = Convert.ToInt32(cbFornecedor.SelectedValue);
                 produtos.IdUnidade = Convert.ToInt32(cbUnidade.SelectedValue);
                 produtos.Valor = Convert.ToDecimal(txtValor.Text);
-                ProdutoModel.Salvar(produtos);
+                //ProdutoModel.Salvar(produtos);
 
                 ProdutoModel.Editar(produtos);
                 MessageBox.Show("Registro Editado com Sucesso!");
@@ -222,13 +232,12 @@ namespace SistemaOrcamento.View
         {
             txtCodigo.Text = dg.CurrentRow.Cells[0].Value.ToString();
             txtCodProduto.Text = dg.CurrentRow.Cells[1].Value.ToString();
-            cbFornecedor.SelectedValue = dg.CurrentRow.Cells[2].Value.ToString();
+            cbFornecedor.Text = dg.CurrentRow.Cells[2].Value.ToString();
             txtNome.Text = dg.CurrentRow.Cells[3].Value.ToString();
             txtDescricao.Text = dg.CurrentRow.Cells[4].Value.ToString();
-            cbUnidade.SelectedValue = dg.CurrentRow.Cells[5].Value.ToString();
+            cbUnidade.Text = dg.CurrentRow.Cells[5].Value.ToString();
             txtValor.Text = dg.CurrentRow.Cells[6].Value.ToString();
-            HabilitarCampos();
-
+            HabilitarCampos();            
         }
     }
 }

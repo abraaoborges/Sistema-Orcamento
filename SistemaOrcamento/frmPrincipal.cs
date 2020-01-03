@@ -1,4 +1,6 @@
-﻿using SistemaOrcamento.View;
+﻿using SistemaOrcamento.Entities;
+using SistemaOrcamento.Model;
+using SistemaOrcamento.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +15,33 @@ namespace SistemaOrcamento
 {
     public partial class frmPrincipal : Form
     {
+        OrcamentoModel orcamentoModel = new OrcamentoModel();
         public frmPrincipal()
         {
             InitializeComponent();
+            Listar();
+        }
+
+        private void Listar()
+        {
+            try
+            {
+                dg.DataSource = orcamentoModel.ListarOrcamento();
+                dg.Columns[0].Visible = false;
+                dg.Columns[8].Visible = false;
+                dg.Columns[9].Visible = false;
+                dg.Columns[1].HeaderText = "Número Orçamento";
+                dg.Columns[2].HeaderText = "Produto";
+                dg.Columns[4].HeaderText = "Cliente";
+                dg.Columns[5].HeaderText = "Quantidade";
+                dg.Columns[6].HeaderText = "Valor Total";
+                dg.Columns[7].HeaderText = "Data";
+                dg.Columns[3].HeaderText = "Valor Unitário";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao Listar os Dados " + ex.Message);
+            }
         }
 
         private void sairToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -44,6 +70,18 @@ namespace SistemaOrcamento
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmProdutos frm = new frmProdutos();
+            frm.ShowDialog();
+        }
+
+        private void novoOrçamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmOrcamentos frm = new frmOrcamentos();
+            frm.ShowDialog();
+        }
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            frmOrcamentos frm = new frmOrcamentos();
             frm.ShowDialog();
         }
     }
